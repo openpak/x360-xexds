@@ -1,0 +1,5 @@
+.env
+/x360-xexds
+/x360-xexds-probe
+/dist
+*.log
