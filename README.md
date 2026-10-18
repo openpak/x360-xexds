@@ -5,7 +5,7 @@ OpenPak's Xbox 360 `xexds.xboxlive.com` endpoint. Today it answers one thing: th
 Connection**, which decides the **Internet** line of that page. Microsoft's own host no longer answers those
 datagrams, so a real 360 on today's Internet fails that step with "Internet: Failed"; this service makes it pass.
 
-Naming rule: every OpenPak Xbox 360 service is called `x360-<thing>`. Sibling: [`x360-notice`](../x360-notice).
+Naming rule: every OpenPak Xbox 360 service is called `x360-<thing>`. Sibling: [`x360-notice`](x360-notice).
 
 Architecture: **a real Xbox 360 and the Wharf emulator hit the same endpoint.** Both resolve
 `xexds.xboxlive.com`; the name is redirected to this service by DNS (OpenPak's resolver for consoles, the
