@@ -21,7 +21,7 @@ var (
 	key = []byte("0123456789abcdef0123456789abcdef")
 )
 
-// The request packets as observed on the wire (docs/xbox360/wharf-base-plan.md,
+// The request packets as observed on the wire (internal research notes,
 // "XEXDS probe reply layout"), built here from the documented header bytes and
 // texts rather than through the package's own builders.
 func mtuReq() []byte {

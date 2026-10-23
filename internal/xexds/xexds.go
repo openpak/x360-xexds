@@ -3,7 +3,7 @@
 // "Xbox Live ICMP Test" NAT probe with its 32-byte follow-up.
 //
 // The layout comes from OpenPak's own analysis of the dashboard
-// (docs/xbox360/wharf-base-plan.md, "XEXDS probe reply layout"); nothing is
+// (internal research notes, "XEXDS probe reply layout"); nothing is
 // taken from Microsoft's service. Every multi-byte header field is
 // little-endian, except the mapped port, which is network order.
 //

@@ -21,7 +21,7 @@ real console, and not deployed.
 ## What XEXDS is
 
 `xexds.xboxlive.com` is one of the Xbox Live hostnames the 360 firmware resolves (the XAM service list in
-[`docs/xbox360/wharf-base-plan.md`](../docs/xbox360/wharf-base-plan.md) names it next to `XEAS`, `XEMACS` and
+internal research notes names it next to `XEAS`, `XEMACS` and
 `XETGS`). What OpenPak's documents establish about it:
 
 - The **dashboard** contacts it first during the connectivity test (this repo's only job).
@@ -32,12 +32,12 @@ real console, and not deployed.
 Implemented: only the MTU and NAT probe. Everything else, including the XNetLogon contact, is not yet.
 
 Protocol knowledge comes only from OpenPak's own documents and the firmware's observed behaviour; see the
-[clean-room policy](../docs/clean-room-policy.md).
+[clean-room policy](https://docs.openpak.org/contributors/clean-room/).
 
 ## Protocol
 
 All multi-byte header fields are little-endian, except the mapped port. Source of truth:
-[`docs/xbox360/wharf-base-plan.md`](../docs/xbox360/wharf-base-plan.md), "XEXDS probe reply layout".
+internal research notes, "XEXDS probe reply layout".
 
 Request: `u16 type (1)`, `u16 subtype`, `u16 total length`, `u16 body length (total - 36)`, then a NUL-terminated text.
 
