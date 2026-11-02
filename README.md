@@ -24,9 +24,7 @@ go run ./cmd/x360-xexds   # listens on UDP :3074
 ## Docs
 
 - [Protocol](docs/protocol.md)
-- [Evidence](docs/evidence.md)
 - [Deploy](docs/deploy.md)
-- [Notes](docs/notes.md)
 
 ## Licence
 

@@ -33,3 +33,11 @@ and the result is logged only (debug level).
 Inputs that do not match are ignored silently: a probe whose datagram length differs from its advertised total,
 an unknown total, a wrong text, a follow-up not exactly 32 bytes, a type other than 1, an IPv6 source.
 Replies are never longer than the request, so the endpoint cannot be used for amplification.
+
+## Probe
+
+`xexds.xboxlive.com` is one of the Xbox Live hostnames the 360 firmware resolves (next to `XEAS`, `XEMACS` and `XETGS`). The dashboard (firmware 17559) sends a connection probe to it over UDP port 3074 during Network Settings -> Test Xbox Live Connection; it decides the Internet line of that page, and the MTU and NAT probe is the only part implemented. The Live logon engine inside `xam.xex` (XNetLogon, socket on port 0x4E9) contacts it in the step after; that traffic is not implemented.
+
+A real Xbox 360 and the Wharf emulator hit the same endpoint: the name is redirected here by DNS (OpenPak's resolver for consoles, `nic_dns_hosts` for Wharf). There is no emulator-only path, port or packet.
+
+The reply layout is derived from the dashboard's own code (OpenPak's decompile and live reads, no Microsoft capture). The firmware shows Internet: Connected against the stand-in with the same layout (two live runs in Wharf). Verified by unit tests and by `x360-xexds-probe`.
