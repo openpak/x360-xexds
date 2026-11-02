@@ -11,7 +11,7 @@ internal research notes names it next to `XEAS`, `XEMACS` and
   step after this one. That traffic is **not implemented**.
 - What the acronym stands for and everything else the real service did is not established, and is not guessed here.
 
-Implemented: only the MTU and NAT probe. Everything else, including the XNetLogon contact, is not yet.
+Implemented: only the MTU and NAT probe. Everything else, including the XNetLogon contact, is out of scope.
 
 Protocol knowledge comes only from OpenPak's own documents and the firmware's observed behaviour; see the
 [clean-room policy](https://docs.openpak.org/contributors/clean-room/).

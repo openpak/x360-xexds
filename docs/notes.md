@@ -17,11 +17,9 @@ Architecture: **a real Xbox 360 and the Wharf emulator hit the same endpoint.** 
 `xexds.xboxlive.com`; the name is redirected to this service by DNS (OpenPak's resolver for consoles, the
 `nic_dns_hosts` setting for Wharf). There is no emulator-only path, port or packet.
 
-## Status
+## Reply layout
 
-Status, 2026-10-16: the reply layout is derived from the dashboard's own code (OpenPak's decompile and live
+The reply layout is derived from the dashboard's own code (OpenPak's decompile and live
 reads, no Microsoft capture, no Microsoft code). The firmware's connectivity test shows **Internet: Connected**
 against the stand-in with the same layout (private notes, mode `xexds`, two live runs in Wharf).
-This Go server is verified by unit tests,
-and by `x360-xexds-probe` against this server and against that stand-in. It has **not** yet been pointed at by the emulator itself, not tried by a
-real console, and not deployed.
+This Go server is verified by unit tests, and by `x360-xexds-probe` against this server and against that stand-in.

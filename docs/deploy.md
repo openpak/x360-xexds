@@ -36,4 +36,4 @@ docker build -t x360-xexds .
 `cmd/x360-xexds` main; `cmd/x360-xexds-probe` client; `internal/config`; `internal/xexds` (`Responder.Reply` is the
 whole protocol as a pure function, `Server` the receive loop, `Probe` the client cycle). License: AGPL-3.0-only, like the
 rest of the OpenPak servers. Releases: tag `v*.*.*` publishes `ghcr.io/openpak/x360-xexds` and deployed hosts auto-update
-from it, so nothing is tagged until a deploy is wanted.
+from it.
