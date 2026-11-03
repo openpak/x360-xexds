@@ -1,5 +1,9 @@
 # Changelog: x360-xexds
 
+## v0.1.1 (2026-11-03)
+
+- Each answered UDP datagram writes `cmd <kind> -> answered|bad cookie <duration>ms` at the default log level (it was Debug only), via x360-common `httplog.Command`.
+
 ## Unreleased
 
 - 2026-10-16: first cut. UDP endpoint for the Xbox 360 dashboard's XEXDS connection probe: the

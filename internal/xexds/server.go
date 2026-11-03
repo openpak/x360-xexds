@@ -5,6 +5,9 @@ import (
 	"errors"
 	"log/slog"
 	"net"
+	"time"
+
+	"github.com/openpak/x360-common/httplog"
 )
 
 // Server reads datagrams from one UDP socket and answers them inline: the
@@ -30,6 +33,7 @@ func (s *Server) Serve(ctx context.Context, conn *net.UDPConn) error {
 			}
 			return err
 		}
+		start := time.Now()
 		reply, kind, tagOK := s.Responder.Reply(buf[:n], src)
 		if reply == nil {
 			s.Log.Debug("ignored datagram", "src", src, "len", n)
@@ -39,6 +43,11 @@ func (s *Server) Serve(ctx context.Context, conn *net.UDPConn) error {
 			s.Log.Warn("reply failed", "src", src, "err", err)
 			continue
 		}
+		result := "answered"
+		if kind == FollowUp && !tagOK {
+			result = "bad cookie"
+		}
+		httplog.Command(kind.String(), result, start)
 		attrs := []any{"kind", kind.String(), "src", src, "len", n, "reply_len", len(reply)}
 		if kind == FollowUp {
 			attrs = append(attrs, "cookie_ok", tagOK)
